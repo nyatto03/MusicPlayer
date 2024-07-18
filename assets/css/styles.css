@@ -89,12 +89,16 @@ header h2 {
 
 /* CONTROL */
 
-i:hover {
+/* i:hover {
     cursor: pointer;
     color: #f8e2e2;
-}
+} */
 
 .btn:hover {
+    cursor: pointer;
+}
+
+.song:hover {
     cursor: pointer;
 }
 
@@ -220,4 +224,75 @@ input#progress.progress:hover {
     padding: 16px 8px;
     color: #999;
     font-size: 18px;
+}
+
+/* Add button styles */
+#toggle-form-btn {
+    padding: 10px;
+    font-size: 16px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    top: 15px;
+    right: 15px;
+    /* margin-right: 1200px; */
+}
+
+#toggle-form-btn:hover {
+    background-color: #d01747; /* Adjust the hover color if needed */
+}
+
+/* Add form styles */
+.add-song-form {
+    display: none; /* Hidden by default */
+    position: fixed;
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    /* margin-top: 60px; Adjust the margin to fit your layout */
+    top: 70px;
+    position: absolute;
+    bottom: 70px; /* Adjust the bottom position to fit your layout */
+    right: 20px; /* Adjust the right position to align with the button */
+    z-index: 1;
+    height: 270px;
+}
+
+.add-song-form input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: calc(100% - 22px);
+}
+
+.add-song-form input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.add-song-form button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-song-form button:hover {
+    background-color: #d01747; /* Adjust the hover color if needed */
 }

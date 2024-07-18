@@ -16,8 +16,13 @@ const nextBtn = $('.btn-next');
 const randomBtn = $('.btn-random');
 const repeatBtn = $('.btn-repeat');
 const playList = $('.playlist');
-
-
+const toggleFormBtn = $('#toggle-form-btn');
+const addSongForm = $('#add-song-form');
+const addSongBtn = $('#add-song-btn');
+const songNameInput = $('#song-name');
+const songSingerInput = $('#song-singer');
+const songPathInput = $('#song-path');
+const songImageInput = $('#song-image');
 
 const app = {
     currentIndex: 0,
@@ -251,6 +256,33 @@ const app = {
             }
         }
 
+        // Xử lý hiển thị form thêm bài hát
+        toggleFormBtn.onclick = function () {
+            if (addSongForm.style.display === 'none' || addSongForm.style.display === '') {
+                addSongForm.style.display = 'flex';
+            } else {
+                addSongForm.style.display = 'none';
+            }
+        }
+
+        // Xử lý thêm bài hát mới
+        addSongBtn.onclick = function () {
+            const newSong = {
+                name: songNameInput.value,
+                singer: songSingerInput.value,
+                path: songPathInput.value,
+                image: songImageInput.value
+            };
+
+            _this.songs.push(newSong);
+            _this.render();
+            addSongForm.style.display = 'none';
+            songNameInput.value = '';
+            songSingerInput.value = '';
+            songPathInput.value = '';
+            songImageInput.value = '';
+        }
+
     },
     scrollToActiveSong: function () {
         setTimeout(() => {
@@ -314,7 +346,5 @@ const app = {
 
     }
 }
-
-
 
 app.start();

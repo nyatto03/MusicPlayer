@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music player</title>
-    <link rel="icon" href="https://fullstack.edu.vn/favicon/apple-touch-icon.png" type="image/x-icon">
+    <!-- <link rel="icon" href="https://fullstack.edu.vn/favicon/apple-touch-icon.png" type="image/x-icon"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
         integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
         crossorigin="anonymous" />
@@ -17,6 +17,8 @@
 <body>
 
     <div class="player">
+
+
         <!-- Dashboard -->
         <div class="dashboard">
             <!-- Header -->
@@ -55,6 +57,18 @@
             <input id="progress" class="progress" type="range" value="0" step="1" min="0" max="100">
 
             <audio id="audio" src=""></audio>
+
+            <!-- Toggle Form Button -->
+            <button id="toggle-form-btn"><i class="fas fa-plus"></i></button>
+
+            <!-- Add Song Form -->
+            <div class="add-song-form" id="add-song-form">
+                <input type="text" id="song-name" placeholder="Song Name">
+                <input type="text" id="singer-name" placeholder="Singer">
+                <input type="text" id="song-path" placeholder="Song Path">
+                <input type="text" id="song-image" placeholder="Image URL">
+                <button id="add-song-btn">Add Song</button>
+            </div>
         </div>
 
         <!-- Playlist -->
